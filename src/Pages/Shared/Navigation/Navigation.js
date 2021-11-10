@@ -42,6 +42,7 @@ const Navigation = () => {
                     LogOut
                   </Button>
                 </Nav.Link>
+                <Nav.Link className="text-white">{user.displayName}</Nav.Link>
               </>
             ) : (
               <Nav.Link as={Link} to="/login" className="text-white">
