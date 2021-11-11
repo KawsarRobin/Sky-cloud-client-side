@@ -43,7 +43,7 @@ const Dashboard = () => {
               className="text-decoration-none text-black"
               to={`${url}/manageAllOrders`}
             >
-              <h6>Manage All Orders</h6>
+              <h6>Manage Orders</h6>
             </Link>
             <Link
               className="text-decoration-none text-black"
