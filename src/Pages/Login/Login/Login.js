@@ -13,6 +13,7 @@ const Login = () => {
     user,
     setError,
     setUser,
+    saveUser,
   } = useAuth();
 
   const location = useLocation();
@@ -23,7 +24,9 @@ const Login = () => {
     signInUsingGoogle()
       .then((result) => {
         setError('');
+        const user = result.user;
         setUser(result.user);
+        saveUser(user.email, user.displayName, 'PUT');
         history.push(redirect_uri);
       })
       .catch((error) => setError(error.message));

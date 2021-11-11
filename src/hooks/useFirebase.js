@@ -83,6 +83,19 @@ const useFirebase = () => {
       .catch((error) => setError(error.message));
   };
 
+  //Save user to database
+  const saveUser = (email, displayName, method) => {
+    const user = { email, displayName };
+
+    fetch('http://localhost:5000/users', {
+      method: method,
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+  };
+
   return {
     user,
     signInUsingGoogle,
@@ -97,6 +110,9 @@ const useFirebase = () => {
     setError,
     setUser,
     setName,
+    saveUser,
+    displayName,
+    email,
   };
 };
 

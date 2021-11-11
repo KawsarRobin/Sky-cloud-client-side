@@ -15,6 +15,9 @@ const Register = () => {
     setError,
     setUser,
     setName,
+    saveUser,
+    displayName,
+    email,
   } = useAuth();
 
   const location = useLocation();
@@ -25,7 +28,9 @@ const Register = () => {
     signInUsingGoogle()
       .then((result) => {
         setError('');
+        const user = result.user;
         setUser(result.user);
+        saveUser(user.email, user.displayName, 'PUT');
         history.push(redirect_uri);
       })
       .catch((error) => setError(error.message));
@@ -36,8 +41,9 @@ const Register = () => {
     registrationUsingEmail()
       .then((result) => {
         setError('');
-        setUser(result.user);
         setName();
+        setUser(result.user);
+        saveUser(email, displayName, 'POST');
         history.push(redirect_uri);
       })
       .catch((error) => setError(error.message));
