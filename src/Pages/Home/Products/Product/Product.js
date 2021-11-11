@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
@@ -14,14 +15,21 @@ const Product = (props) => {
             <h5 className="text-danger">${price}</h5>
           </Card.Title>
           <div>
-            {/* <h6 className="ps-2 text-start ">
-              <i className="far fa-smile-beam "></i>{' '}
-              <span>
-                {' '}
-                {rating >= 7 ? `${rating} Superb` : `${rating} Good`}
-              </span>
-            </h6> */}
             <span>{description.slice(0, 100)}...</span>
+            <br />
+
+            <span>
+              {' '}
+              <Rating
+                readonly
+                emptySymbol="far fa-star text-danger"
+                fullSymbol="fas fa-star text-danger"
+                initialRating={rating}
+              >
+                {' '}
+              </Rating>{' '}
+              <span className="fw-bold">{rating}</span>
+            </span>
           </div>{' '}
           <br />
           <p>
