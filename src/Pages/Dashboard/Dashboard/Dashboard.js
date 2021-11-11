@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
@@ -11,6 +12,7 @@ import Review from '../Review/Review';
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
+  const { admin } = useAuth();
 
   return (
     <Container>
@@ -21,49 +23,56 @@ const Dashboard = () => {
           xs={12}
           md={2}
         >
-          <div className="text-start">
-            <Link
-              className="text-decoration-none text-black"
-              to={`${url}/myOrders`}
-            >
-              <h6>My Orders</h6>
-            </Link>
-            <Link
-              className="text-decoration-none text-black"
-              to={`${url}/review`}
-            >
-              <h6>Review</h6>
-            </Link>
-            <Link className="text-decoration-none text-black" to={`${url}/pay`}>
-              <h6>Payment</h6>
-            </Link>
-          </div>
-          <div className="text-start ">
-            <Link
-              className="text-decoration-none text-black"
-              to={`${url}/manageAllOrders`}
-            >
-              <h6>Manage Orders</h6>
-            </Link>
-            <Link
-              className="text-decoration-none text-black"
-              to={`${url}/addProduct`}
-            >
-              <h6>Lunch Product</h6>
-            </Link>
-            <Link
-              className="text-decoration-none text-black"
-              to={`${url}/makeAdmin`}
-            >
-              <h6>Make Admin</h6>
-            </Link>
-            <Link
-              className="text-decoration-none text-black"
-              to={`${url}/manageProducts`}
-            >
-              <h6>Manage Products</h6>
-            </Link>
-          </div>
+          {
+            <div className="text-start">
+              <Link
+                className="text-decoration-none text-black"
+                to={`${url}/myOrders`}
+              >
+                <h6>My Orders</h6>
+              </Link>
+              <Link
+                className="text-decoration-none text-black"
+                to={`${url}/review`}
+              >
+                <h6>Review</h6>
+              </Link>
+              <Link
+                className="text-decoration-none text-black"
+                to={`${url}/pay`}
+              >
+                <h6>Payment</h6>
+              </Link>
+            </div>
+          }
+          {admin && (
+            <div className="text-start ">
+              <Link
+                className="text-decoration-none text-black"
+                to={`${url}/manageAllOrders`}
+              >
+                <h6>Manage Orders</h6>
+              </Link>
+              <Link
+                className="text-decoration-none text-black"
+                to={`${url}/addProduct`}
+              >
+                <h6>Lunch Product</h6>
+              </Link>
+              <Link
+                className="text-decoration-none text-black"
+                to={`${url}/makeAdmin`}
+              >
+                <h6>Make Admin</h6>
+              </Link>
+              <Link
+                className="text-decoration-none text-black"
+                to={`${url}/manageProducts`}
+              >
+                <h6>Manage Products</h6>
+              </Link>
+            </div>
+          )}
 
           <h6 className="text-start">LogOut</h6>
         </Col>

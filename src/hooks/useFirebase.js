@@ -20,6 +20,7 @@ const useFirebase = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [displayName, setDisplayName] = useState('');
+  const [admin, setAdmin] = useState(false);
 
   const auth = getAuth();
 
@@ -83,10 +84,17 @@ const useFirebase = () => {
       .catch((error) => setError(error.message));
   };
 
+  //check Admin by email
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
+  console.log(admin);
+
   //Save user to database
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-
     fetch('http://localhost:5000/users', {
       method: method,
       headers: {
@@ -113,6 +121,7 @@ const useFirebase = () => {
     saveUser,
     displayName,
     email,
+    admin,
   };
 };
 

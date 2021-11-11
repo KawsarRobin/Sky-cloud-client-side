@@ -7,7 +7,7 @@ const MyOrder = () => {
   const [myOrders, setMyOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  //Load myBookings from database with email
+  //Load myOrders from database with email
   useEffect(() => {
     if (user.email) {
       fetch(`http://localhost:5000/myOrders/${user.email}`, {
@@ -25,9 +25,9 @@ const MyOrder = () => {
     }
   }, [user.email]);
 
-  // Deleted or cancel booking by id
+  // Deleted or cancel Orders by id
   const handleDelete = (id) => {
-    if (window.confirm('Are You Sure to cancel Booking?')) {
+    if (window.confirm('Are You Sure to cancel Order?')) {
       const url = `http://localhost:5000/deleteMyOrder/${id}`;
       fetch(url, {
         method: 'DELETE',
@@ -35,7 +35,7 @@ const MyOrder = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert('You have successfully Canceled Booking!!');
+            alert('You have successfully Canceled your Order!!');
             const remainingOrders = myOrders.filter(
               (order) => order._id !== id
             );
@@ -68,7 +68,7 @@ const MyOrder = () => {
                       <h4>{order.name}</h4>
                       <h6>
                         Status:{' '}
-                        <span className="text-danger">{order.status}</span>
+                        <span className="text-danger"> {order.status}</span>
                       </h6>
                       <Button
                         onClick={() => handleDelete(order._id)}
