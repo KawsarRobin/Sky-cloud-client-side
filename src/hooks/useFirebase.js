@@ -90,7 +90,6 @@ const useFirebase = () => {
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
-  console.log(admin);
 
   //Save user to database
   const saveUser = (email, displayName, method) => {

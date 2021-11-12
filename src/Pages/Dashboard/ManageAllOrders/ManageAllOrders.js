@@ -5,6 +5,7 @@ const ManageAllOrders = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isShipped, setIsShipped] = useState(false);
+  const [isApproved, setIsApproved] = useState(false);
 
   //Load all the orders
   useEffect(() => {
@@ -15,7 +16,7 @@ const ManageAllOrders = () => {
         setIsLoading(false);
       })
       .catch((err) => console.log(err.message));
-  }, [isShipped]);
+  }, [isShipped, isApproved]);
 
   // Update pending status to shipped
   const handleShipped = (id) => {
@@ -35,6 +36,7 @@ const ManageAllOrders = () => {
         if (data.modifiedCount > 0) {
           alert('Order Status updated to Shipped Successfully');
           setIsShipped(true);
+          setIsApproved(false);
         }
       })
       .catch((err) => console.log(err.message));
@@ -56,6 +58,7 @@ const ManageAllOrders = () => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           alert('Order Status updated to Approved Successfully');
+          setIsApproved(true);
           setIsShipped(false);
         }
       })

@@ -49,7 +49,7 @@ const Explore = () => {
                       <h5 className="text-danger">${product.price}</h5>
                     </Card.Title>
                     <div>
-                      <span>{product.description.slice(0, 50)}...</span>
+                      <span>{product.description?.slice(0, 50)}...</span>
                       <br />
 
                       <span>

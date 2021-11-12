@@ -33,7 +33,7 @@ const Products = () => {
             You`re guaranteed to find something that`s right for you.
           </p>
           <Row xs={1} md={3} className="g-3">
-            {products.slice(0, 6).map((product) => (
+            {products?.slice(0, 6).map((product) => (
               <Product key={product._id} product={product}>
                 {' '}
               </Product>

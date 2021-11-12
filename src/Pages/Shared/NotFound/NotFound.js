@@ -10,6 +10,10 @@ const NotFound = () => {
         className="img-fluid"
       />
       <h1 className="text-danger">Page Not Found!</h1>
+      <h4>
+        It looks like you may have a wrong turn. Don't worry... it happens to
+        the best of us.
+      </h4>
       <h4>Please try search for some other page</h4>
       <Link to="/home">
         <br />

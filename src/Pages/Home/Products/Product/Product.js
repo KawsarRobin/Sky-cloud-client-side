@@ -15,7 +15,7 @@ const Product = (props) => {
             <h5 className="text-danger">${price}</h5>
           </Card.Title>
           <div>
-            <span>{description.slice(0, 100)}...</span>
+            <span>{description?.slice(0, 100)}...</span>
             <br />
 
             <span>
