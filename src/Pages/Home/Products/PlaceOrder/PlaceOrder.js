@@ -144,7 +144,11 @@ const PlaceOrder = () => {
                     {...register('date', { required: true })}
                   />
 
-                  <input className="btn btn-outline-success" type="submit" />
+                  <input
+                    className="btn btn-outline-success"
+                    value="Place Order"
+                    type="submit"
+                  />
                 </form>
               </div>
             </Col>

@@ -54,37 +54,39 @@ const MyOrder = () => {
     );
   } else {
     return (
-      <Container className="py-md-4 p-sm-3">
-        <Row xs={1} md={2} className="g-4">
-          {myOrders.map((order) => (
-            <Col key={order._id} className="p-3">
-              <Card className="bg-light shadow">
-                <Row>
-                  <Col>
-                    <Card.Img className="p-2" variant="top" src={order.img} />
-                  </Col>
-                  <Col>
-                    <Card.Body className="text-secondary">
-                      <h4>{order.name}</h4>
-                      <h6>
-                        Status:{' '}
-                        <span className="text-danger"> {order.status}</span>
-                      </h6>
-                      <Button
-                        onClick={() => handleDelete(order._id)}
-                        variant="danger"
-                        className=""
-                      >
-                        Cancel
-                      </Button>
-                    </Card.Body>
-                  </Col>
-                </Row>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <section style={{ backgroundColor: '#EDE9FE' }}>
+        <Container className="py-md-4 vh-100 p-sm-3">
+          <Row xs={1} md={2} className="g-4">
+            {myOrders.map((order) => (
+              <Col key={order._id} className="p-3">
+                <Card className="bg-light shadow">
+                  <Row>
+                    <Col>
+                      <Card.Img className="p-2" variant="top" src={order.img} />
+                    </Col>
+                    <Col>
+                      <Card.Body className="text-secondary">
+                        <h4>{order.name}</h4>
+                        <h6>
+                          Status:{' '}
+                          <span className="text-danger"> {order.status}</span>
+                        </h6>
+                        <Button
+                          onClick={() => handleDelete(order._id)}
+                          variant="danger"
+                          className=""
+                        >
+                          Cancel
+                        </Button>
+                      </Card.Body>
+                    </Col>
+                  </Row>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
     );
   }
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
-import Rating from 'react-rating';
+import { Container, Row, Spinner } from 'react-bootstrap';
+import ReviewDetails from './ReviewDetails/ReviewDetails';
 
 const Review = () => {
   const [reviews, setReviews] = useState([]);
@@ -33,39 +33,9 @@ const Review = () => {
         <p className="text-secondary text-center">
           We serve They Loved & Spreads loves among others!
         </p>
-        <Row xs={1} md={4} className="g-4">
+        <Row xs={1} md={3} className="g-4">
           {reviews.map((review) => (
-            <Col key={review._id}>
-              <Card>
-                <Card.Img
-                  className="m-4 w-25 me-auto rounded rounded-circle img-fluid"
-                  variant="top"
-                  src={review.img}
-                />
-                <Card.Body className="text-start">
-                  <Card.Title>{review.name}</Card.Title>
-
-                  <Card.Text style={{ fontSize: '12px' }}>
-                    {review.description}
-                  </Card.Text>
-                  <p className="fw-bold fs-5">
-                    <span className="text-danger">{review.rating} </span>
-                    {'    '}
-                    <span>
-                      {' '}
-                      <Rating
-                        readonly
-                        emptySymbol="far fa-star text-danger"
-                        fullSymbol="fas fa-star text-danger"
-                        initialRating={review.rating}
-                      >
-                        {' '}
-                      </Rating>{' '}
-                    </span>
-                  </p>
-                </Card.Body>
-              </Card>
-            </Col>
+            <ReviewDetails key={review._id} review={review}></ReviewDetails>
           ))}
         </Row>
       </Container>

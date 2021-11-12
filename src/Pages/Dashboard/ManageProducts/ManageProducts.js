@@ -45,41 +45,47 @@ const ManageProducts = () => {
     );
   } else {
     return (
-      <Container className="py-md-4 p-sm-3">
-        <Row xs={1} md={2} className="g-4">
-          {products.map((product) => (
-            <Col key={product._id} className="p-3">
-              <Card className="bg-light shadow">
-                <Row>
-                  <Col>
-                    <Card.Img className="p-2" variant="top" src={product.img} />
-                  </Col>
-                  <Col>
-                    <Card.Body className="text-secondary">
-                      <h6>{product.name}</h6>
-                      <p className="text-danger fw-bold">${product.price}</p>
-                      <p>
-                        Rating:{' '}
-                        <span className="text-danger fw-bold">
-                          {product.rating}
-                        </span>
-                      </p>
+      <div style={{ backgroundColor: '#DCEDC8' }}>
+        <Container className="py-md-4 p-sm-3">
+          <Row xs={1} md={2} className="g-4">
+            {products.map((product) => (
+              <Col key={product._id} className="p-3">
+                <Card className="bg-light shadow">
+                  <Row>
+                    <Col>
+                      <Card.Img
+                        className="p-2"
+                        variant="top"
+                        src={product.img}
+                      />
+                    </Col>
+                    <Col>
+                      <Card.Body className="text-secondary">
+                        <h6>{product.name}</h6>
+                        <p className="text-danger fw-bold">${product.price}</p>
+                        <p>
+                          Rating:{' '}
+                          <span className="text-danger fw-bold">
+                            {product.rating}
+                          </span>
+                        </p>
 
-                      <Button
-                        onClick={() => handleDelete(product._id)}
-                        variant="danger"
-                        className=""
-                      >
-                        Delete
-                      </Button>
-                    </Card.Body>
-                  </Col>
-                </Row>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+                        <Button
+                          onClick={() => handleDelete(product._id)}
+                          variant="danger"
+                          className=""
+                        >
+                          Delete
+                        </Button>
+                      </Card.Body>
+                    </Col>
+                  </Row>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
     );
   }
 };

@@ -6,6 +6,11 @@ import useAuth from '../../../hooks/useAuth';
 const Review = () => {
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
+
+  const img = user.photoURL;
+  const defaultImg =
+    'https://image.flaticon.com/icons/png/512/1106/1106631.png';
+
   const onSubmit = (data) => {
     const review = data;
     console.log(review);
@@ -20,7 +25,7 @@ const Review = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert('Review Added Successfully');
+          alert('Review Posted Successfully');
           reset();
         }
       })
@@ -28,8 +33,11 @@ const Review = () => {
   };
   return (
     <div>
-      <Container className=" w-75 mx-md-5 rounded rounded-3 border border-3 shadow my-5 bg-light">
-        <h4 className="py-3 text-primary">Write A Review</h4>
+      <Container
+        style={{ backgroundColor: '#818CF8' }}
+        className=" w-75 mx-md-5 rounded rounded-3 border border-3 shadow my-5 "
+      >
+        <h2 className="py-3 fw-bolder text-warning">Write A Review</h2>
         <h6>Let us know how you enjoyed us</h6>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -45,11 +53,13 @@ const Review = () => {
             placeholder="Email"
             {...register('email', { required: true })}
           />
-          <input
-            defaultValue={user?.photoURL}
-            placeholder="Photo URL"
-            {...register('img', { required: false })}
-          />
+          {(img || defaultImg) && (
+            <input
+              defaultValue={img ? img : defaultImg}
+              placeholder="Photo URL"
+              {...register('img', { required: false })}
+            />
+          )}
 
           <textarea
             placeholder="Your valuable Comment"
@@ -63,7 +73,7 @@ const Review = () => {
           />
 
           <input
-            className="btn btn-outline-info "
+            className="btn btn-secondary "
             value="Post Review"
             type="submit"
           />

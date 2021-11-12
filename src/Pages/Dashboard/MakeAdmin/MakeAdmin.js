@@ -28,7 +28,7 @@ const MakeAdmin = () => {
     e.preventDefault();
   };
   return (
-    <div className="p-5">
+    <div className="p-5 vh-100 bg-light">
       <h2 className="text-success"> Make A New Admin </h2>
       <form onSubmit={handleSubmit}>
         <input

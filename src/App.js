@@ -9,7 +9,6 @@ import Home from './Pages/Home/Home/Home';
 import PlaceOrder from './Pages/Home/Products/PlaceOrder/PlaceOrder';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
-import Navigation from './Pages/Shared/Navigation/Navigation';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
     <AuthProvider>
       <div className="App">
         <BrowserRouter>
-          <Navigation></Navigation>
           <Switch>
             <Route exact path="/">
               <Home></Home>
