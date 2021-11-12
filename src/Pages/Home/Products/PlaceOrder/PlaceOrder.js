@@ -15,7 +15,7 @@ const PlaceOrder = () => {
 
   //Find single data by id
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://sheltered-fortress-54983.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -36,7 +36,7 @@ const PlaceOrder = () => {
     product.status = status;
     delete product._id;
 
-    fetch('http://localhost:5000/addOrder', {
+    fetch('https://sheltered-fortress-54983.herokuapp.com/addOrder', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

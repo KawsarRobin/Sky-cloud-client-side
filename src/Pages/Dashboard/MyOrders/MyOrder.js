@@ -10,12 +10,15 @@ const MyOrder = () => {
   //Load myOrders from database with email
   useEffect(() => {
     if (user.email) {
-      fetch(`http://localhost:5000/myOrders/${user.email}`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-      })
+      fetch(
+        `https://sheltered-fortress-54983.herokuapp.com/myOrders/${user.email}`,
+        {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setMyOrders(data);
@@ -28,7 +31,7 @@ const MyOrder = () => {
   // Deleted or cancel Orders by id
   const handleDelete = (id) => {
     if (window.confirm('Are You Sure to cancel Order?')) {
-      const url = `http://localhost:5000/deleteMyOrder/${id}`;
+      const url = `https://sheltered-fortress-54983.herokuapp.com/deleteMyOrder/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

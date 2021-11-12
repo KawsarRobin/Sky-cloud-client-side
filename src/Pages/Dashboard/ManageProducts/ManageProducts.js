@@ -7,7 +7,7 @@ const ManageProducts = () => {
 
   //Load all products
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://sheltered-fortress-54983.herokuapp.com/products')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -19,7 +19,7 @@ const ManageProducts = () => {
   // Deleted or cancel Orders by id
   const handleDelete = (id) => {
     if (window.confirm('Are You sure to delete this product?')) {
-      const url = `http://localhost:5000/deleteProduct/${id}`;
+      const url = `https://sheltered-fortress-54983.herokuapp.com/deleteProduct/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

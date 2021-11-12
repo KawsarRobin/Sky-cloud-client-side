@@ -8,7 +8,7 @@ const Review = () => {
 
   //Load all products
   useEffect(() => {
-    fetch('http://localhost:5000/reviews')
+    fetch('https://sheltered-fortress-54983.herokuapp.com/reviews')
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

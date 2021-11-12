@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
 
   //Load all the orders
   useEffect(() => {
-    fetch('http://localhost:5000/allOrders')
+    fetch('https://sheltered-fortress-54983.herokuapp.com/allOrders')
       .then((res) => res.json())
       .then((data) => {
         setAllOrders(data);
@@ -24,13 +24,16 @@ const ManageAllOrders = () => {
       status: 'Shipped',
     };
 
-    fetch(`http://localhost:5000/upadateOrders/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(status),
-    })
+    fetch(
+      `https://sheltered-fortress-54983.herokuapp.com/upadateOrders/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(status),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -47,13 +50,16 @@ const ManageAllOrders = () => {
       status: 'Approved',
     };
 
-    fetch(`http://localhost:5000/upadateOrders/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(status),
-    })
+    fetch(
+      `https://sheltered-fortress-54983.herokuapp.com/upadateOrders/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(status),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -68,7 +74,7 @@ const ManageAllOrders = () => {
   // Deleted or cancel booking by id
   const handleDelete = (id) => {
     if (window.confirm('Are you sure to Cancel Booking?')) {
-      const url = `http://localhost:5000/deleteMyOrder/${id}`;
+      const url = `https://sheltered-fortress-54983.herokuapp.com/deleteMyOrder/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

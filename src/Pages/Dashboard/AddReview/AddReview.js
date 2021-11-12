@@ -15,7 +15,7 @@ const Review = () => {
     const review = data;
     console.log(review);
 
-    fetch('http://localhost:5000/addReview', {
+    fetch('https://sheltered-fortress-54983.herokuapp.com/addReview', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -7,7 +7,7 @@ const AddProduct = () => {
   const onSubmit = (data) => {
     const product = data;
 
-    fetch('http://localhost:5000/addProduct', {
+    fetch('https://sheltered-fortress-54983.herokuapp.com/addProduct', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
