@@ -20,7 +20,7 @@ const About = () => {
             <div className="">
               <img
                 className=" rounded rounded-5 img-fluid"
-                src={`http://demoapus-wp.com/drone/home1/wp-content/uploads/2016/01/singlebanner.jpg`}
+                src={`https://i.ibb.co/t4yXQ2q/singlebanner.jpg`}
                 alt=""
               />
             </div>

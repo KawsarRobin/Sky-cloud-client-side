@@ -46,7 +46,7 @@ const PlaceOrder = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert('Your Booking Placed Successfully');
+          alert('Your Order Placed Successfully');
           reset();
         }
       })

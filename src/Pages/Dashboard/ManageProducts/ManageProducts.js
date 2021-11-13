@@ -46,7 +46,7 @@ const ManageProducts = () => {
   } else {
     return (
       <div style={{ backgroundColor: '#DCEDC8' }}>
-        <Container className="py-md-4 p-sm-3">
+        <Container className="py-md-4 mt-4 mt-md-0 p-sm-3">
           <Row xs={1} md={2} className="g-4">
             {products.map((product) => (
               <Col key={product._id} className="p-3">

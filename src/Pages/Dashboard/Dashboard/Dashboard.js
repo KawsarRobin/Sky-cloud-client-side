@@ -5,6 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import AddProduct from '../AddProduct/AddProduct';
 import AddReview from '../AddReview/AddReview';
+import DashboardInitial from '../DashboardInitial/DashboardInitial';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import ManageProducts from '../ManageProducts/ManageProducts';
@@ -32,6 +33,10 @@ const Dashboard = () => {
           />
           <hr />
 
+          <Link
+            className="text-decoration-none text-white"
+            to={`${url}`}
+          ></Link>
           {admin || (
             <div className="text-start my-2">
               <Link to="/home" className="text-white  text-decoration-none">
@@ -39,7 +44,10 @@ const Dashboard = () => {
                   <i className="fas fa-home"></i> Home
                 </h6>
               </Link>
-              <Link className="text-decoration-none text-white" to={`${url}`}>
+              <Link
+                className="text-decoration-none text-white"
+                to={`${url}/myOrders`}
+              >
                 <h6 className="">
                   {' '}
                   <i className="fas fa-shopping-cart"></i> My Orders
@@ -63,7 +71,7 @@ const Dashboard = () => {
               </Link>
             </div>
           )}
-          <hr />
+
           {admin && (
             <div className="text-start ">
               <Link to="/home" className="text-white  text-decoration-none">
@@ -113,18 +121,20 @@ const Dashboard = () => {
         </Col>
 
         <Col className="p-0" xs={12} md={9}>
-          <div
-            className="text-start ps-5"
-            style={{ backgroundColor: '#42a5f5' }}
-          >
-            <img
-              src="https://i.ibb.co/mSjxn9t/logo-6.png"
-              alt=""
-              className="img-fluid"
-            />
+          <div className="text-center" style={{ backgroundColor: '#42a5f5' }}>
+            <div>
+              <img
+                src="https://i.ibb.co/mSjxn9t/logo-6.png"
+                alt=""
+                className="img-fluid"
+              />
+            </div>
           </div>
           <Switch>
             <Route exact path={`${path}`}>
+              <DashboardInitial></DashboardInitial>
+            </Route>
+            <Route exact path={`${path}/myOrders`}>
               <MyOrder></MyOrder>
             </Route>
             <Route path={`${path}/pay`}>
