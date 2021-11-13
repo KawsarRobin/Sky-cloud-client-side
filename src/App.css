@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 500;
 }
 
 form input,
@@ -14,4 +16,11 @@ form textarea {
 }
 Link {
   text-decoration: none;
+}
+
+.product:hover {
+  background-color: #164e63 !important;
+  color: white;
+  transform: scale(1.06);
+  transition: transform 0.2s ease-out 0s;
 }

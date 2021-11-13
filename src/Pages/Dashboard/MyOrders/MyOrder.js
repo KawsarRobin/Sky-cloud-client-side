@@ -57,7 +57,7 @@ const MyOrder = () => {
     );
   } else {
     return (
-      <section style={{ backgroundColor: '#EDE9FE' }}>
+      <section style={{ backgroundColor: 'lightgray' }}>
         <Container className="py-md-4 vh-100 p-sm-3">
           <Row xs={1} md={2} className="g-4">
             {myOrders.map((order) => (

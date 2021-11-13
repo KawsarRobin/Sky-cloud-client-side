@@ -65,12 +65,7 @@ const Register = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control type="text" placeholder="Address" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control type="text" placeholder="City" />
-        </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             onBlur={handleEmailChange}

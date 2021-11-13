@@ -73,7 +73,7 @@ const ManageAllOrders = () => {
 
   // Deleted or cancel booking by id
   const handleDelete = (id) => {
-    if (window.confirm('Are you sure to Cancel Booking?')) {
+    if (window.confirm('Are you sure to Cancel Order?')) {
       const url = `https://sheltered-fortress-54983.herokuapp.com/deleteMyOrder/${id}`;
       fetch(url, {
         method: 'DELETE',

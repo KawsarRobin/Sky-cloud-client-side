@@ -19,7 +19,7 @@ const Footer = () => {
         <Row xs={1} md={4} className="p-5 g-3 text-white">
           <Col>
             <img
-              src="http://hrkit.rometheme.pro/skyandcloud/wp-content/uploads/sites/10/2021/06/logo-6.png"
+              src="https://i.ibb.co/mSjxn9t/logo-6.png"
               alt=""
               className="img-fluid"
             />

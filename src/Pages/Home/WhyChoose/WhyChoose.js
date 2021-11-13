@@ -3,11 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const WhyChoose = () => {
   return (
-    <div style={{ backgroundColor: '#' }}>
+    <div style={{ backgroundColor: '#e3f2fd' }}>
       <Container className="py-5 overflow-hidden">
         <div className="text-center pb-3">
           <h2 className="fw-bolder ">
-            <span className="text-info">Why</span> You'll Recommend from Us
+            <span className="text-info">Why</span> You Choose Us
           </h2>
           <p className="text-secondary">
             You don't have to Think Alone, you've got our assistance and help.
@@ -25,7 +25,7 @@ const WhyChoose = () => {
             >
               <div className="text-center">
                 <img
-                  src="http://hrkit.rometheme.pro/skyandcloud/wp-content/uploads/sites/10/2021/06/training-1.png"
+                  src="https://i.ibb.co/qWC8njx/training-1.png"
                   alt=""
                   className="w-25 mb-2"
                 />
@@ -45,7 +45,7 @@ const WhyChoose = () => {
             >
               <div className="text-center">
                 <img
-                  src="http://hrkit.rometheme.pro/skyandcloud/wp-content/uploads/sites/10/2021/06/training-2.png"
+                  src="https://i.ibb.co/QvVMng5/training-2.png"
                   alt=""
                   className="w-25 mb-2"
                 />
@@ -65,7 +65,7 @@ const WhyChoose = () => {
             >
               <div className="text-center">
                 <img
-                  src="http://hrkit.rometheme.pro/skyandcloud/wp-content/uploads/sites/10/2021/06/training-3.png"
+                  src="https://i.ibb.co/pjHZkH3/training-3.png"
                   alt=""
                   className="w-25 mb-2"
                 />

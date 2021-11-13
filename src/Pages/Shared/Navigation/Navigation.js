@@ -6,10 +6,10 @@ import useAuth from '../../../hooks/useAuth';
 const Navigation = () => {
   const { user, logOut } = useAuth();
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar style={{ backgroundColor: '#42a5f5' }} expand="lg">
       <Container fluid>
         <img
-          src="http://hrkit.rometheme.pro/skyandcloud/wp-content/uploads/sites/10/2021/06/logo-6.png"
+          src="https://i.ibb.co/mSjxn9t/logo-6.png"
           alt=""
           className="img-fluid"
         />
@@ -33,16 +33,11 @@ const Navigation = () => {
                   Dashboard
                 </Nav.Link>
                 <Nav.Link className="text-white">
-                  <Button
-                    variant="outline-secondary"
-                    size="sm"
-                    onClick={logOut}
-                  >
+                  <Button variant="secondary" size="sm" onClick={logOut}>
                     {' '}
-                    LogOut
+                    <i className="fas fa-sign-out-alt"></i> LogOut
                   </Button>
                 </Nav.Link>
-                <Nav.Link className="text-white">{user.displayName}</Nav.Link>
               </>
             ) : (
               <Nav.Link as={Link} to="/login" className="text-white">

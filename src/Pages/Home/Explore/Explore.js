@@ -34,14 +34,14 @@ const Explore = () => {
           <p className="text-secondary text-center">
             We Promise that you will get Cheap and Quality products here!
           </p>
-          <Row xs={1} md={3} className="g-3">
+          <Row xs={1} md={3} className="g-4">
             {products.map((product) => (
               <Col key={product._id}>
-                <Card className="rounded rounded-3 service shadow bg-light h-100">
+                <Card className="rounded product rounded-3 service shadow bg-light h-100">
                   <Card.Img
                     variant="top"
                     src={product.img}
-                    className="  rounded rounded-3"
+                    className=" p-2 rounded rounded-3"
                   />
                   <Card.Body>
                     <Card.Title className="d-flex justify-content-between align-items-center">
@@ -68,7 +68,7 @@ const Explore = () => {
                     <br />
                     <p>
                       <Link to={`/placeorder/${product._id}`}>
-                        <Button size="" variant="outline-success">
+                        <Button size="" variant="outline-primary">
                           Purchase Now
                         </Button>
                       </Link>

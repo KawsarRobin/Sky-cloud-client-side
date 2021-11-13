@@ -7,13 +7,13 @@ const ReviewDetails = (props) => {
 
   return (
     <Col>
-      <Card>
+      <Card style={{ borderRadius: '10px' }}>
         <Card.Img
-          className="m-4 w-25 me-auto rounded rounded-circle img-fluid"
+          className="m-4 w-25 mx-auto rounded rounded-circle img-fluid"
           variant="top"
           src={img}
         />
-        <Card.Body className="text-start">
+        <Card.Body className="text-center">
           <Card.Title>{name}</Card.Title>
 
           <Card.Text style={{ fontSize: '12px' }}>{description}</Card.Text>

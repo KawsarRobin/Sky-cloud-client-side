@@ -13,7 +13,6 @@ const Review = () => {
 
   const onSubmit = (data) => {
     const review = data;
-    console.log(review);
 
     fetch('https://sheltered-fortress-54983.herokuapp.com/addReview', {
       method: 'POST',
