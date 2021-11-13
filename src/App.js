@@ -6,10 +6,10 @@ import AuthProvider from './Context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ExplorePage from './Pages/ExplorePage/ExplorePage';
 import Home from './Pages/Home/Home/Home';
-import PlaceOrder from './Pages/Home/Products/PlaceOrder/PlaceOrder';
 import Products from './Pages/Home/Products/Products';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import PlaceOrderPage from './Pages/PlaceOrderPage/PlaceOrderPage';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
                 <ExplorePage></ExplorePage>
               </PrivateRoute>
               <PrivateRoute path="/placeorder/:id">
-                <PlaceOrder></PlaceOrder>
+                <PlaceOrderPage></PlaceOrderPage>
               </PrivateRoute>
               <PrivateRoute path="/dashboard">
                 <Dashboard></Dashboard>
