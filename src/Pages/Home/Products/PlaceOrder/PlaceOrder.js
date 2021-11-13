@@ -80,7 +80,7 @@ const PlaceOrder = () => {
                     </Card.Title>
                     <div>
                       <p className="ps-2 text-start"></p>
-                      <span>{product.description?.slice(0, 100)}</span> <br />
+                      <span>{product.description?.slice(0, 300)}</span> <br />
                       <span></span>{' '}
                     </div>{' '}
                     <hr />

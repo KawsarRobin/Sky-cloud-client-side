@@ -9,7 +9,10 @@ const Product = (props) => {
   return (
     <Slide left>
       <Col>
-        <Card className="product rounded rounded-3 service shadow bg-light h-100">
+        <Card
+          className="product rounded rounded-3 service shadow 
+        bg-light h-100"
+        >
           <Card.Img
             variant="top"
             src={img}

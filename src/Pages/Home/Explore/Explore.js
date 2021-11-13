@@ -37,8 +37,8 @@ const Explore = () => {
           </p>
           <Row xs={1} md={3} className="g-4">
             {products.map((product) => (
-              <Slide bottom>
-                <Col key={product._id}>
+              <Slide key={product._id} bottom>
+                <Col>
                   <Card className="rounded product rounded-3 service shadow bg-light h-100">
                     <Card.Img
                       variant="top"
