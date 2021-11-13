@@ -58,7 +58,7 @@ const Dashboard = () => {
                 to={`${url}/addReview`}
               >
                 <h6 className="my-4">
-                  <i className="fas fa-star-half-alt"></i> Review
+                  <i className="far fa-comment"></i> Review
                 </h6>
               </Link>
               <Link
@@ -92,7 +92,7 @@ const Dashboard = () => {
                 to={`${url}/addProduct`}
               >
                 <h6 className="my-4">
-                  <i className="fas fa-plus-square"></i> Launch Product
+                  <i className="fas fa-plus-circle"></i> Launch Product
                 </h6>
               </Link>
               <Link
@@ -100,7 +100,7 @@ const Dashboard = () => {
                 to={`${url}/makeAdmin`}
               >
                 <h6 className="my-4">
-                  <i className="fas fa-user"></i> Make Admin
+                  <i className="fas fa-user-plus"></i> Make Admin
                 </h6>
               </Link>
               <Link
@@ -108,7 +108,7 @@ const Dashboard = () => {
                 to={`${url}/manageProducts`}
               >
                 <h6 className="my-4">
-                  <i className="fas fa-tasks"></i> Manage Products
+                  <i className="fas fa-clipboard-list"></i> Manage Products
                 </h6>
               </Link>
             </div>

@@ -22,6 +22,8 @@ const MakeAdmin = () => {
       .then((data) => {
         if (data.modifiedCount) {
           alert('Your Have Successfully made a new Admin');
+        } else {
+          alert('Oops!!!!, User not found, Try again');
         }
       });
 

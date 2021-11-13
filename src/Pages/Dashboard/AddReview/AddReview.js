@@ -61,12 +61,12 @@ const Review = () => {
           )}
 
           <textarea
-            placeholder="Your valuable Comment"
+            placeholder="What's your experience with us"
             {...register('description', { required: true })}
           />
 
           <input
-            placeholder="Rating (Within 5)"
+            placeholder="Rate us (Within 5)"
             type="text"
             {...register('rating', { required: true })}
           />
